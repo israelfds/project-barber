@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./barbearia-app
+      dockerfile: Dockerfile
+    container_name: barber-frontend
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_API_URL=http://backend:4000  # Aponta para o nome do serviço backend
+    restart: always
+    depends_on:
+      - backend
+    networks:
+      - barber-network
+
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: barber-backend
+    ports:
+      - "4000:4000"
+    environment:
+      - MONGO_URI=mongodb://admin:barberproject@mongo:27017/barbershop?authSource=admin  # Aponta para o nome do serviço mongo
+    restart: always
+    depends_on:
+      - mongo
+    networks:
+      - barber-network
+
+  mongo:
+    image: mongo:latest
+    container_name: barber-mongo
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin  # Nome de usuário root
+      MONGO_INITDB_ROOT_PASSWORD: barberproject  # Senha root
+    volumes:
+      - mongo-data:/data/db
+    restart: always
+    networks:
+      - barber-network
+
+volumes:
+  mongo-data:
+
+networks:
+  barber-network:
+    driver: bridge

@@ -1,0 +1,37 @@
+# Ignorar dependências de desenvolvimento, será instalada apenas em produção
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos e diretórios locais do ambiente de desenvolvimento
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignorar arquivos de teste e mocks
+/test/
+/coverage/
+__tests__/
+*.spec.js
+*.test.js
+
+# Ignorar arquivos de build (se aplicável)
+dist/
+build/
+
+# Ignorar arquivos do Docker que não são necessários no container
+Dockerfile
+docker-compose.yml
+
+# Ignorar arquivos de controle de versão
+.git
+.gitignore
+
+# Ignorar dados temporários e caches
+tmp/
+.cache/

@@ -1,0 +1,21 @@
+/src
+  /components
+    Auth.js
+    BarberList.js
+    AppointmentForm.js
+    AppointmentList.js
+    ExpenseForm.js
+    ExpenseList.js
+    ServiceForm.js
+    ServiceList.js
+    PaymentForm.js
+    PaymentList.js
+  /pages
+    LoginPage.js
+    RegisterPage.js
+    DashboardPage.js
+    AdminDashboardPage.js
+    BarberDashboardPage.js
+    ClientDashboardPage.js
+  App.js
+  index.js
