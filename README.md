@@ -78,3 +78,12 @@ Este é um sistema de gerenciamento para uma barbearia que permite:
 1. Clone o repositório:
    ```bash
    git clone https://github.com/israelfds/project-barber
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd project-barber
+
+3. Execute o projeto com Docker:
+   ```bash
+   docker-compose up --build -d   
+
+
